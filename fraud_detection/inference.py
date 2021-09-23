@@ -35,7 +35,6 @@ class FraudDetection():
 
         input = self.process_input(input_dict)
         output = self.model.predict(input)
-
         if output[0]:
             return True
         return False
