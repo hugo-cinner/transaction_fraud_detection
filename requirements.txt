@@ -2,3 +2,5 @@ dj-database-url
 Django
 gunicorn
 djangorestframework
+whitenoise
+psycopg2
