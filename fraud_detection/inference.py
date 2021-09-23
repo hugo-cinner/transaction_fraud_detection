@@ -1,12 +1,4 @@
-import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-
-import numpy as np
 import pickle
-from sklearn.ensemble import RandomForestClassifier
-
-# from .util_functions.utils import *
-import json
 
 
 class FraudDetection():
