@@ -26,7 +26,7 @@ SECRET_KEY = '@p=x5o2&wnqo+te&p*h(yh-o+0f*(4)5f*&6#e*=$q_#lmilqi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://transaction-fraud-detection.herokuapp.com/']
 
 
 # Application definition
