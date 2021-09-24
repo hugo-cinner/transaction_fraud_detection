@@ -1,6 +1,5 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-
+import gzip
 import pickle
 
 
@@ -12,7 +11,7 @@ class FraudDetection():
     # Add the Backbone option in the parameters
     def load_model(self):
         model_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
-        with open(model_dir + '/model.pickle', 'rb') as f:
+        with gzip.GzipFile(model_dir + '/model.pgz', 'rb') as f:
             model = pickle.load(f)
         return model
 
@@ -40,7 +39,6 @@ class FraudDetection():
 
         input = self.process_input(input_dict)
         output = self.model.predict(input)
-
         if output[0]:
             return True
         return False
