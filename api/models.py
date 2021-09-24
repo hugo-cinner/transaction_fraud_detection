@@ -2,8 +2,6 @@ from django.db import models
 import uuid
 # Create your models here.
 
-from api.utils import get_input_image_path, get_output_image_path, get_output_json_path
-
 class Transaction(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255, null=True, blank=True)
