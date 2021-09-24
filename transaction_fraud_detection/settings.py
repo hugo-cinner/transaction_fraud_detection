@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['https://transaction-fraud-detection.herokuapp.com/', 'transact
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

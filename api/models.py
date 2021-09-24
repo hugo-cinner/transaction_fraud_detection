@@ -16,14 +16,10 @@ class Transaction(models.Model):
     nameDest = models.CharField(max_length=255, null=True, blank=True)
     oldbalanceDest = models.CharField(max_length=255, null=True, blank=True)
     newbalanceDest = models.CharField(max_length=255, null=True, blank=True)
+    isFraud = models.BooleanField(default=False)
     verified = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return "%s" % self.name
-
-
-# class Image(models.Model):
-#     property_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     image = models.FileField(upload_to=get_input_image_path, null=True, blank=True)
