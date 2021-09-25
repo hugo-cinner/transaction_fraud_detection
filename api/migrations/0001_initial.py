@@ -16,7 +16,6 @@ class Migration(migrations.Migration):
             name='Transaction',
             fields=[
                 ('uuid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('name', models.CharField(blank=True, max_length=255, null=True)),
                 ('step', models.CharField(blank=True, max_length=255, null=True)),
                 ('type', models.CharField(blank=True, max_length=255, null=True)),
                 ('amount', models.CharField(blank=True, max_length=255, null=True)),
