@@ -4,4 +4,4 @@ gunicorn
 djangorestframework
 whitenoise
 psycopg2
-scikit-learn==0.22.2
+scikit-learn==0.22.2.post1
