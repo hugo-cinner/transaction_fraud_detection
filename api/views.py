@@ -54,13 +54,10 @@ def run_fraud_detection_inference(request):
         record_serializer.save()
 
     # check limit records
-    LIMIT = 10
+    LIMIT = 2000
     all_records = Transaction.objects.all()
-    print(len(all_records))
-    if len(all_records) > LIMIT:
-        Transaction.objects.filter(uuid__in=list(Transaction.objects.values_list('uuid', flat=True)[:2])).delete()
-        all_records = Transaction.objects.all()
-        print(len(all_records))
+    if len(all_records) >= LIMIT:
+        Transaction.objects.filter(uuid__in=list(Transaction.objects.values_list('uuid', flat=True)[:500])).delete()
 
 
 

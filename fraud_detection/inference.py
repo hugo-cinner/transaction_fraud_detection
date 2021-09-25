@@ -23,6 +23,9 @@ class FraudDetection():
         else:
             dict['type'] = 1
 
+        dict['difOrig'] = dict['amount'] + dict['newbalanceOrig'] - dict['oldbalanceOrig']
+        dict['difDest'] = dict['amount'] + dict['oldbalanceDest'] - dict['newbalanceDest']
+
         input_arr = []
         for key in dict.keys():
             if key not in ['nameOrig', 'nameDest']:
