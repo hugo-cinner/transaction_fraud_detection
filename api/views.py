@@ -53,4 +53,15 @@ def run_fraud_detection_inference(request):
     if record_serializer.is_valid():
         record_serializer.save()
 
+    # check limit records
+    LIMIT = 10
+    all_records = Transaction.objects.all()
+    print(len(all_records))
+    if len(all_records) > LIMIT:
+        Transaction.objects.filter(id__in=list(Transaction.objects.values_list('pk', flat=True)[:2])).delete()
+        all_records = Transaction.objects.all()
+        print(len(all_records))
+
+
+
     return Response({"isFraud": output})
