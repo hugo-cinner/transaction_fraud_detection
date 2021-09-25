@@ -4,7 +4,6 @@ import uuid
 
 class Transaction(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255, null=True, blank=True)
     step = models.CharField(max_length=255, null=True, blank=True)
     type = models.CharField(max_length=255, null=True, blank=True)
     amount = models.CharField(max_length=255, null=True, blank=True)
@@ -18,6 +17,3 @@ class Transaction(models.Model):
     verified = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return "%s" % self.name
